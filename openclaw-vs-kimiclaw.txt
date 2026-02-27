@@ -1,0 +1,34 @@
+OpenClaw (with gpt5-mini) vs KimiClaw — Strengths & Differences
+
+1) Hosting & Control
+- OpenClaw (self-hosted/local): runs in user VPS/workspace; user retains full control over data, upgrades, and network access. Best for privacy, compliance, and auditability.
+- KimiClaw (cloud/browser-hosted): managed persistent agent in the cloud; simpler onboarding and always-on availability but requires trusting the provider with telemetry and integrations.
+
+2) Safety & Governance
+- OpenClaw: Enforceable local policies, least-privilege defaults, explicit per-action approvals, tamper-evident audit logs. Stronger guarantees against secret exfiltration when configured correctly.
+- KimiClaw: Safety depends on provider defaults and UI; may offer centralized policy controls but less direct host-level enforcement for local resources.
+
+3) Integrations & Skills
+- OpenClaw: Skills are explicit and installed per workspace; safer for bespoke workflows but requires manual setup for many integrations.
+- KimiClaw: Likely a richer managed skill marketplace and easier third-party integrations (cloud services, plugins) out-of-the-box.
+
+4) Performance & Cost
+- OpenClaw + gpt5-mini: Lower per-call cost and lower latency for local tasks; running on smaller models reduces cloud costs and data egress but requires local compute.
+- KimiClaw: Higher operational/recurring costs for managed hosting, but offloads compute and maintenance to provider; may scale better for many concurrent users.
+
+5) Availability & Persistence
+- OpenClaw: Availability depends on your host; persistent behavior requires keeping VPS up. Good offline capabilities.
+- KimiClaw: Designed for always-on agents via browser/cloud; better for 24/7 background tasks and push notifications.
+
+6) Developer Experience
+- OpenClaw: Stronger control for developers, reproducible workspace, easier debugging with local logs and file access.
+- KimiClaw: Faster to start for non-technical users; smoother UX for skill discovery and browser-based interactions.
+
+7) Trust & Data Residency
+- OpenClaw: Data remains under user control (on-premises), easier to satisfy regulatory requirements.
+- KimiClaw: Provider holds data/metadata; verify GDPR/region controls before use for sensitive data.
+
+Bottom-line recommendation
+- Use OpenClaw + gpt5-mini when privacy, auditability, cost predictability, and host-level control matter.
+- Use KimiClaw when you need fast onboarding, always-on browser/cloud persistence, and broad managed integrations.
+
