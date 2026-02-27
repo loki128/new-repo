@@ -1,0 +1,177 @@
+--- FILE: /index-single.html ---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dr. Dan Protein Powder — Single File</title>
+<meta name="description" content="Dr. Dan — science-backed protein.">
+<style>
+:root{
+  --bg:#07070a;--elev:#0f0f13;--card:#141418;--glass:rgba(255,255,255,0.03);
+  --text:#e9e6e1;--muted:#9b9690;
+  --neon-300:#6af2ff;--neon-500:#33d7ff;--gold:#b8922a;
+  --gap:8px;--radius:12px;--container:1100px;
+  --dur-fast:120ms;--dur-mid:250ms;--ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.4}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+a{color:var(--neon-300);text-decoration:none}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.03);position:sticky;top:0;background:linear-gradient(180deg,rgba(7,7,10,0.8),rgba(7,7,10,0.3));backdrop-filter:blur(6px);z-index:20}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{height:44px}
+.nav{display:flex;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--neon-300),var(--neon-500));color:#04121a;border:none;box-shadow:0 8px 24px rgba(51,215,255,0.06)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.03)}
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.hero{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;padding:60px 0}
+.hero-visual{border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#08101a 0%,#061018 100%);min-height:320px;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-copy h1{font-size:2.6rem;margin:0 0 12px}
+.hero-copy p{margin:0 0 18px;color:var(--muted)}
+.ctas{display:flex;gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform var(--dur-mid) var(--ease),box-shadow var(--dur-mid) var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.card-media{height:140px;border-radius:8px;overflow:hidden;background:linear-gradient(180deg,#0f1013,#0c0c10);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.section{padding:48px 0}
+.trust{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.trust .logos{display:flex;gap:12px;align-items:center}
+.form{max-width:640px}
+.field{margin-bottom:12px}
+label{display:block;font-weight:600;margin-bottom:6px}
+input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:var(--elev);color:var(--text)}
+.footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:48px;text-align:center}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity var(--dur-mid) var(--ease),transform var(--dur-mid) var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px)}
+.modal-panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);max-width:520px;width:90%}
+.chart-row{display:flex;gap:16px;align-items:center}
+.radial{position:relative;width:160px;height:160px;display:flex;align-items:center;justify-content:center}
+.radial canvas{width:100%;height:100%}
+.radial .val{position:absolute;font-weight:700;font-size:1.2rem}
+@media(max-width:900px){.hero{grid-template-columns:1fr;}.hero-visual{order:-1;height:220px}.grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header container" role="banner">
+  <div class="logo">
+    <svg width="220" height="50" viewBox="0 0 280 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dr. Dan Protein"><rect width="280" height="64" rx="8" fill="#07070a"/><text x="28" y="40" font-family="Inter,system-ui" font-size="20" fill="#b8922a" font-weight="700">Dr. Dan</text><text x="28" y="56" font-family="Inter,system-ui" font-size="10" fill="#e9e6e1">Protein Powder</text><circle cx="16" cy="32" r="12" fill="#33d7ff"/></svg>
+  </div>
+  <nav class="nav" role="navigation" aria-label="Main">
+    <a class="btn" href="#products" data-link>Products</a>
+    <a class="btn" href="#science" data-link>Science</a>
+    <a class="btn btn-ghost" href="#inquiry" data-link>Order Inquiry</a>
+  </nav>
+</header>
+
+<main id="main" class="container" role="main">
+  <section class="hero section" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title">Science-Fueled Protein. Legendary Results.</h1>
+      <p>Clinically dosed blends for recovery, strength, and clean gains. Trusted by athletes and crafted by Dr. Dan.</p>
+      <div class="ctas">
+        <button class="btn btn-primary" id="shopBtn">Shop Proteins</button>
+        <a class="btn btn-ghost" href="#inquiry" data-link>Order Inquiry</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" role="img" aria-hidden="true">
+        <defs><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#07101a"/><stop offset="1" stop-color="#08131a"/></linearGradient></defs>
+        <rect width="100%" height="100%" fill="url(#hg)"></rect>
+        <g opacity="0.06" fill="#33d7ff"><circle cx="500" cy="60" r="100"></circle><circle cx="420" cy="160" r="54"></circle><circle cx="100" cy="300" r="160"></circle></g>
+      </svg>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <h2>Featured Formulas</h2>
+    <div class="grid" id="productGrid">
+      <article class="card reveal" data-product="performance_whey" tabindex="0">
+        <div class="card-media">Performance Whey</div>
+        <div><p class="muted">Fast-absorbing isolate blend for post-workout recovery.</p>
+        <div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-primary addBtn">Add</button><button class="btn viewBtn">Details</button></div></div>
+      </article>
+      <article class="card reveal" data-product="clean_vegan" tabindex="0">
+        <div class="card-media">Clean Vegan</div>
+        <div><p class="muted">Plant-based matrix engineered for muscle support.</p>
+        <div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-primary addBtn">Add</button><button class="btn viewBtn">Details</button></div></div>
+      </article>
+      <article class="card reveal" data-product="night_recovery" tabindex="0">
+        <div class="card-media">Night Recovery</div>
+        <div><p class="muted">Slow-release casein for overnight muscle repair.</p>
+        <div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-primary addBtn">Add</button><button class="btn viewBtn">Details</button></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="science" class="section">
+    <h2>Ingredient Breakdown</h2>
+    <div class="chart-row reveal">
+      <div class="radial" role="img" aria-label="Protein content">
+        <canvas id="radial" width="160" height="160"></canvas>
+        <div class="val" id="radialVal">0</div>
+      </div>
+      <div style="flex:1">
+        <p class="muted">Per serving: protein, BCAAs, fats, and carbs shown.</p>
+        <div style="margin-top:12px">
+          <div><span>Protein</span><div style="height:10px;background:rgba(255,255,255,0.04);border-radius:6px;margin-top:6px"><div id="barProtein" style="width:0;background:linear-gradient(90deg,var(--neon-300),var(--neon-500));height:100%;border-radius:6px"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:18px" class="muted">View lab-quality reports in the lightbox.</p>
+    <button class="btn" id="openLab">View Lab Report</button>
+  </section>
+
+  <section class="section trust reveal">
+    <div>
+      <h3>Trusted by Coaches & Athletes</h3>
+      <p class="muted">Join 20,000+ athletes who choose Dr. Dan.</p>
+    </div>
+    <div class="logos" aria-hidden="true">
+      <svg width="120" height="36" viewBox="0 0 120 36"><rect width="120" height="36" rx="6" fill="#0b0b0d"/><text x="8" y="22" fill="#b8922a" font-size="12">Coach</text></svg>
+      <svg width="120" height="36" viewBox="0 0 120 36"><rect width="120" height="36" rx="6" fill="#0b0b0d"/><text x="8" y="22" fill="#33d7ff" font-size="12">Athlete</text></svg>
+    </div>
+  </section>
+
+  <section id="inquiry" class="section">
+    <h2>Order Inquiry</h2>
+    <form id="inquiryForm" class="form" novalidate>
+      <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="product">Product</label>
+        <select id="product" name="product"><option>Performance Whey</option><option>Clean Vegan</option><option>Night Recovery</option></select>
+      </div>
+      <div style="display:flex;gap:10px"><button class="btn btn-primary" type="submit">Submit Inquiry</button><button type="reset" class="btn btn-ghost">Clear</button></div>
+      <div id="formMsg" aria-live="polite" style="margin-top:12px;color:var(--neon-300)"></div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer">
+  © Dr. Dan Protein Powder — Crafted with science. <a href="https://instagram.com" id="igLink" aria-label="Instagram">Follow @DrDanProtein</a>
+</footer>
+
+<script>
+(function(){
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduced && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});},{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else { document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible')); }
+
+  document.addEventListener('DOMContentLoaded',()=>{ document.querySelectorAll('.hero-copy .ctas, .hero-copy h1, .hero-copy p').forEach((el,i)=>{ if(reduced){ el.style.opacity=1; } else { el.style.opacity=0; el.style.transform='translateY(8px)'; setTimeout(()=>{ el.style.transition='opacity 420ms var(--ease), transform 420ms var(--ease)'; el.style.opacity=1; el.style.transform='none'; }, i*80); } }); });
+
+  document.addEventListener('click',e=>{ const a=e.target.closest('a[data-link]'); if(!a) return; e.preventDefault(); const href=a.getAttribute('href'); const el=document.querySelector(href); if(el){ el.scrollIntoView({behavior: reduced? 'auto':'smooth', block:'start'}); history.replaceState(null,'',href); } });
+
+  document.querySelectorAll('.addBtn').forEach(b=>b.addEventListener('click',()=>{ showCart(); }));
+  document.querySelectorAll('.viewBtn').forEach(b=>b.addEventListener('click', ()=>{ alert('Product details placeholder'); }));
+  function showCart(){ const modal=document.createElement('div'); modal.className='modal'; modal.innerHTML='<div class="modal-panel" role="dialog" aria-modal="true"><h2>Cart</h2><p>Item added (frontend demo).</p><div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-primary" id="closeCart">Close</button></div></div>'; document.body.appendChild(modal); modal.querySelector('#closeCart').focus(); modal.querySelector('#closeCart').addEventListener('click',()=>document.body.removeChild(modal)); }
+
+  document.getElementById('openLab')?.addEventListener('click',()=>{ alert('Lab report placeholder'); });
+
+  // charts
+  function drawRadial(canvas, value){ if(!canvas) return; const ctx=canvas.getContext('2d'); const dpr=window.devicePixelRatio||1; const size=Math.min(canvas.clientWidth,canvas.clientHeight); canvas.width=size*dpr; canvas.height=size*dpr; ctx.scale(dpr,dpr); const center=size/2; const radius=center-8; ctx.clearRect(0,0,size,size); ctx
