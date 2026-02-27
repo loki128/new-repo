@@ -1,5 +1,0 @@
---- FILE: /CHANGELOG.txt ---
-2026-02-27T07:26Z - Created initial site scaffold: index.html, contact.html
-2026-02-27T07:26Z - Added assets JS: anim.js, router.js, charts.js, product.js
-2026-02-27T07:26Z - Added CSS vars/base/animations
-2026-02-27T07:26Z - Added product page and data/ingredients.json and SVG placeholders
