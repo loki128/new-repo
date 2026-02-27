@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Dr. Dan Protein Powder</title>
+  <link rel="stylesheet" href="/css/vars.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/img/logo.svg" alt="Dr. Dan"></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/products.html">Products</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html" class="btn btn-ghost">Order Inquiry</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="contact-hero reveal">
+      <h1>Order Inquiry</h1>
+      <p class="muted">Tell us what you need and our team will get back with personalized recommendations and ordering options.</p>
+    </section>
+
+    <section class="contact-form reveal">
+      <form id="inquiryForm" class="form" novalidate>
+        <fieldset>
+          <legend>Contact Information</legend>
+          <div class="field"><label for="name">Full name</label><input id="name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Order Details</legend>
+          <div class="field"><label for="product">Product of interest</label>
+            <select id="product" name="product">
+              <option>Performance Whey</option>
+              <option>Clean Vegan</option>
+              <option>Night Recovery</option>
+            </select>
+          </div>
+          <div class="field"><label for="quantity">Approx quantity</label><input id="quantity" name="quantity" type="number" min="1" value="1"></div>
+          <div class="field"><label for="note">Additional notes</label><textarea id="note" name="note" rows="4"></textarea></div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button id="submitBtn" class="btn btn-primary" type="submit">Submit Inquiry</button>
+          <button id="clearBtn" class="btn btn-ghost" type="button">Clear</button>
+        </div>
+
+        <div id="formMessage" role="status" aria-live="polite" class="form-message" hidden></div>
+      </form>
+    </section>
+
+    <section class="faq-mini reveal" aria-labelledby="faqTitle">
+      <h2 id="faqTitle">Quick FAQ</h2>
+      <div class="accordion" id="faq">
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq1">Do you ship internationally?</button>
+          <div id="faq1" class="accordion-panel" hidden>
+            <p>Yes — we ship worldwide. Shipping costs and times vary by region; we’ll provide details in our reply.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq2">What are your ingredients?</button>
+          <div id="faq2" class="accordion-panel" hidden>
+            <p>All ingredients are listed on the product pages and packaging. We provide lab reports on request.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq3">How long does delivery take?</button>
+          <div id="faq3" class="accordion-panel" hidden>
+            <p>Domestic: 2–5 business days. International: 7–14 business days typical.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Dr. Dan Protein Powder — Crafted with science. <a href="https://instagram.com" aria-label="Instagram">@DrDanProtein</a></div>
+  </footer>
+
+  <script src="/assets/js/contact.js" defer></script>
+</body>
+</html>

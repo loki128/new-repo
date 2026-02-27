@@ -1,0 +1,32 @@
+--- FILE: /css/base.css ---
+/* base layout and typographic styles */
+
+h1{font-size:2.6rem;margin:0 0 12px}
+h2{font-size:1.6rem;margin:32px 0 12px}
+p{margin:0 0 16px}
+.muted{color:var(--muted)}
+
+.site-header{padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.03);position:sticky;top:0;background:linear-gradient(180deg, rgba(11,11,13,0.7), rgba(11,11,13,0.3));backdrop-filter: blur(6px);z-index:10}
+.logo img{height:40px}
+.nav-list{list-style:none;display:flex;gap:16px;margin:0;padding:0;align-items:center}
+.nav-list a{color:var(--text);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--neon-300),var(--neon-500));color:#04121a;border:none}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.03)}
+
+.hero{padding:64px 0;display:flex;align-items:center}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.hero-title{font-weight:700}
+.hero-sub{font-size:1.05rem}
+
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.card-media{height:140px;border-radius:8px;overflow:hidden;margin-bottom:12px}
+
+.trust-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+.form .field{margin-bottom:12px}
+.form label{display:block;font-weight:600;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:var(--bg-elev);color:var(--text)}
+
+.site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:48px}
