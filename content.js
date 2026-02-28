@@ -126,7 +126,7 @@
 
   function bindKeys(){
     window.addEventListener('keydown', (e)=>{
-      if (e.ctrlKey && e.code === 'Space') { e.preventDefault(); triggerSuggest(true); }
+      if (e.ctrlKey && e.code === 'Space') { e.preventDefault(); sessionAllowed = true; triggerSuggest(true); }
       if (e.key === 'Tab') { if (overlay && overlay.style.display !== 'none') { e.preventDefault(); acceptSuggestion(); } }
       if (e.key === 'Escape') { if (overlay && overlay.style.display !== 'none') { hideGhost(); } }
       if (e.ctrlKey && e.shiftKey && e.code === 'KeyE') { e.preventDefault(); triggerSuggest(true, 'explain'); }
@@ -135,7 +135,9 @@
     }, {capture:true});
   }
 
+  let sessionAllowed = false;
   async function siteAllowed(){
+    if (sessionAllowed) return true;
     return new Promise((resolve)=>{
       chrome.storage.local.get(['calp_allow','calp_deny'], (res)=>{
         const host = location.hostname||'';
