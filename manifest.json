@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Inline AI-powered code completion, refactoring, explanation, and test generation for web-based editors.",
   "permissions": ["storage", "scripting", "activeTab", "notifications"],
-  "host_permissions": ["https://*/*", "http://*/*"],
+  "host_permissions": ["<all_urls>"],
   "background": { "service_worker": "background.js", "type": "module" },
   "action": {
     "default_popup": "popup.html",
@@ -12,13 +12,7 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.github.com/*",
-        "*://*.github.dev/*",
-        "*://*.vscode.dev/*",
-        "*://*.replit.com/*",
-        "*://*.codesandbox.io/*"
-      ],
+      "matches": ["<all_urls>"],
       "js": ["content.js"],
       "css": ["styles.css"],
       "run_at": "document_idle"

@@ -40,14 +40,30 @@
     }
   };
 
-  function activeEditor(){
-    // target common editors: textarea, contenteditable, Monaco view-lines
-    const ae = document.activeElement;
-    if(!ae) return null;
-    if (ae.tagName === 'TEXTAREA' || ae.tagName === 'INPUT') return ae;
-    if (ae.isContentEditable) return ae;
+  function detectKnownEditors(){
+    // Monaco
     const monaco = document.querySelector('.monaco-editor, .view-lines');
-    return monaco || ae;
+    if (monaco) return monaco;
+    // CodeMirror 6
+    const cm6 = document.querySelector('.cm-content, .cm-editor');
+    if (cm6) return cm6;
+    // CodeMirror 5
+    const cm5 = document.querySelector('.CodeMirror, .CodeMirror-code');
+    if (cm5) return cm5;
+    // Ace
+    const ace = document.querySelector('.ace_editor, .ace_content');
+    if (ace) return ace;
+    return null;
+  }
+
+  function activeEditor(){
+    // layered detection: activeElement, known editors, then generic
+    const ae = document.activeElement;
+    if (ae && (ae.tagName === 'TEXTAREA' || ae.tagName === 'INPUT' || ae.isContentEditable)) return ae;
+    const known = detectKnownEditors(); if (known) return known;
+    // generic best-effort
+    const anyEditable = document.querySelector('textarea, input[type="text"], [contenteditable="true"]');
+    return anyEditable || document.body;
   }
 
   function getContext(){
@@ -119,7 +135,22 @@
     }, {capture:true});
   }
 
-  function init(){
+  async function siteAllowed(){
+    return new Promise((resolve)=>{
+      chrome.storage.local.get(['calp_allow','calp_deny'], (res)=>{
+        const host = location.hostname||'';
+        const deny = res.calp_deny||[]; if(deny.includes(host)) return resolve(false);
+        const allow = res.calp_allow||[]; resolve(allow.includes(host));
+      });
+    });
+  }
+
+  async function init(){
+    if (!(await siteAllowed())) {
+      // require user activation via popup allow button or Ctrl+Space
+      bindKeys();
+      return; 
+    }
     UI.ensureOverlay();
     UI.ensureToolbar();
     const ed = activeEditor(); if(!ed) return;
