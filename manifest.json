@@ -1,22 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "CodeAssist Live Pro",
-  "version": "1.0.0",
-  "description": "Inline AI-powered code completion, refactoring, explanation, and test generation for web-based editors.",
+  "name": "CodeAssist Live",
+  "version": "2.0.0",
+  "description": "Inline AI code completion, explanation, refactor, and test generation across web editors.",
   "permissions": ["storage", "scripting", "activeTab", "notifications"],
   "host_permissions": ["<all_urls>"],
-  "background": { "service_worker": "background.js", "type": "module" },
+  "background": { "service_worker": "background.js" },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": {"16": "icons/icon16.svg","48":"icons/icon48.svg","128":"icons/icon128.svg"}
+    "default_icon": { "16": "icons/icon16.svg", "48": "icons/icon48.svg", "128": "icons/icon128.svg" }
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
+      "js": ["overlay.js", "content.js"],
       "css": ["styles.css"],
       "run_at": "document_idle"
     }
   ],
-  "icons": {"16":"icons/icon16.svg","48":"icons/icon48.svg","128":"icons/icon128.svg"}
+  "icons": { "16": "icons/icon16.svg", "48": "icons/icon48.svg", "128": "icons/icon128.svg" }
 }
