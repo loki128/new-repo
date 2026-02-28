@@ -1,0 +1,14 @@
+/* styles.css — minimal clean UI with CSS variables */
+:root{
+  --calp-bg: #0b0f14;
+  --calp-fg: #e9e6e1;
+  --calp-accent: #33d7ff;
+  --calp-muted: #9b9690;
+  --calp-shadow: rgba(0,0,0,0.5);
+}
+body{background:var(--calp-bg);color:var(--calp-fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;}
+.calp-popup{min-width:280px;padding:10px}
+.row{display:flex;gap:8px;align-items:center;margin:8px 0}
+#calp-ghost{position:absolute;z-index:2147483647;background:rgba(20,20,24,0.6);color:#e0f7ff;padding:6px 10px;border-radius:6px;font-family:monospace;}
+.calp-toolbar{position:fixed;right:16px;bottom:16px;z-index:2147483646;background:rgba(20,20,24,0.8);backdrop-filter:blur(4px);box-shadow:0 8px 24px var(--calp-shadow);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:8px}
+.calp-toolbar button{background:linear-gradient(90deg,#6af2ff,#33d7ff);color:#03121a;border:none;border-radius:8px;padding:8px 10px;margin:0 4px;cursor:pointer}
